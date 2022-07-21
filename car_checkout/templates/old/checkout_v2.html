@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>End Ride</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<style id="applicationStylesheet" type="text/css">
+	.mediaViewInfo {
+		--web-view-name: End Ride;
+		--web-view-id: End_Ride;
+		--web-scale-on-resize: true;
+		--web-enable-deep-linking: true;
+	}
+	:root {
+		--web-view-ids: End_Ride;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#End_Ride {
+		position: absolute;
+		width: 428px;
+		height: 926px;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		--web-view-name: End Ride;
+		--web-view-id: End_Ride;
+		--web-scale-on-resize: true;
+		--web-enable-deep-linking: true;
+	}
+	@keyframes fadein {
+	
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	
+	}
+	#Menu_Bottom {
+		fill: rgba(255,255,255,1);
+	}
+	.Menu_Bottom {
+		filter: drop-shadow(0px -10px 20px rgba(101, 109, 116, 0.188));
+		position: absolute;
+		overflow: visible;
+		width: 488px;
+		height: 797px;
+		left: 0px;
+		top: 189px;
+	}
+	#Hi_Sam_Thanks_for_driving_with {
+		left: 36px;
+		top: 90px;
+		position: absolute;
+		overflow: visible;
+		width: 338px;
+		white-space: nowrap;
+		line-height: 34px;
+		margin-top: -2.5px;
+		text-align: left;
+		font-family: Product Sans Black;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 29px;
+		color: rgba(120,116,112,1);
+	}
+	#n_00 {
+		left: 330px;
+		top: 439px;
+		position: absolute;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		line-height: 21px;
+		margin-top: -1.5px;
+		text-align: left;
+		font-family: Product Sans Black;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		color: rgba(120,116,112,1);
+	}
+	#n_5 {
+		left: 173px;
+		top: 444px;
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		white-space: nowrap;
+		line-height: 21px;
+		margin-top: -1.5px;
+		text-align: left;
+		font-family: Product Sans Black;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		color: rgba(0,157,212,1);
+	}
+	#n_ {
+		left: 37px;
+		top: 439px;
+		position: absolute;
+		overflow: visible;
+		width: 25px;
+		white-space: nowrap;
+		line-height: 21px;
+		margin-top: -1.5px;
+		text-align: left;
+		font-family: Product Sans Black;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		color: rgba(120,116,112,1);
+	}
+	#Komponente_1__1 {
+		position: absolute;
+		width: 21.215px;
+		height: 25.665px;
+		left: 329px;
+		top: 36.105px;
+		overflow: visible;
+	}
+	#Icon_ionic-ios-notifications {
+		position: absolute;
+		width: 20.52px;
+		height: 25.665px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Pfad_8 {
+		fill: rgba(0,157,212,1);
+	}
+	.Pfad_8 {
+		overflow: visible;
+		position: absolute;
+		width: 6.177px;
+		height: 3.4px;
+		left: 7.156px;
+		top: 22.266px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Pfad_9 {
+		fill: rgba(0,157,212,1);
+	}
+	.Pfad_9 {
+		overflow: visible;
+		position: absolute;
+		width: 20.521px;
+		height: 21.047px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Ellipse_1 {
+		fill: rgba(0,157,212,1);
+		stroke: rgba(255,255,255,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Ellipse_1 {
+		position: absolute;
+		overflow: visible;
+		width: 8px;
+		height: 8px;
+		left: 13.215px;
+		top: 0.875px;
+	}
+	#Ellipse_10 {
+		position: absolute;
+		width: 51px;
+		height: 51px;
+		left: 365px;
+		top: 22.5px;
+		overflow: visible;
+	}
+	#munich_airport_logo {
+		position: absolute;
+		width: 120px;
+		height: 60px;
+		left: 22px;
+		top: 18.938px;
+		overflow: visible;
+	}
+	#Gruppe_39 {
+		position: absolute;
+		width: 428px;
+		height: 105px;
+		left: 0px;
+		top: 821px;
+		overflow: visible;
+	}
+	#Menu_Bottom_ {
+		fill: rgba(255,255,255,1);
+	}
+	.Menu_Bottom_ {
+		filter: drop-shadow(0px -5px 20px rgba(101, 109, 116, 0.078));
+		position: absolute;
+		overflow: visible;
+		width: 488px;
+		height: 165px;
+		left: 0px;
+		top: 0px;
+	}
+	#Gruppe_17 {
+		position: absolute;
+		width: 38px;
+		height: 42.269px;
+		left: 42px;
+		top: 15.731px;
+		overflow: visible;
+	}
+	#Pfad_1 {
+		fill: rgba(186,189,191,1);
+	}
+	.Pfad_1 {
+		overflow: visible;
+		position: absolute;
+		width: 17.123px;
+		height: 21.55px;
+		left: 10px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Home {
+		left: 0px;
+		top: 27.269px;
+		position: absolute;
+		overflow: visible;
+		width: 39px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		color: rgba(186,189,191,1);
+	}
+	#Gruppe_20 {
+		position: absolute;
+		width: 42px;
+		height: 42.269px;
+		left: 349px;
+		top: 15.731px;
+		overflow: visible;
+	}
+	#Gruppe_16 {
+		position: absolute;
+		width: 19.063px;
+		height: 21.581px;
+		left: 11.471px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Pfad_2 {
+		fill: rgba(186,189,191,1);
+	}
+	.Pfad_2 {
+		overflow: visible;
+		position: absolute;
+		width: 9.851px;
+		height: 9.851px;
+		left: 4.431px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Pfad_3 {
+		fill: rgba(186,189,191,1);
+	}
+	.Pfad_3 {
+		overflow: visible;
+		position: absolute;
+		width: 19.063px;
+		height: 10.52px;
+		left: 0px;
+		top: 11.061px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Profile {
+		left: 0px;
+		top: 27.269px;
+		position: absolute;
+		overflow: visible;
+		width: 43px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		color: rgba(186,189,191,1);
+	}
+	#Gruppe_440 {
+		position: absolute;
+		width: 56px;
+		height: 37.131px;
+		left: 241px;
+		top: 19.869px;
+		overflow: visible;
+	}
+	#Gruppe_19 {
+		position: absolute;
+		width: 56px;
+		height: 15px;
+		left: 0px;
+		top: 22.131px;
+		overflow: visible;
+	}
+	#Logbook {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 57px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		color: rgba(186,189,191,1);
+	}
+	#Icon_material-data-usage {
+		fill: rgba(186,189,191,1);
+	}
+	.Icon_material-data-usage {
+		overflow: visible;
+		position: absolute;
+		width: 19.114px;
+		height: 19.066px;
+		left: 18.443px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Gruppe_439 {
+		position: absolute;
+		width: 28px;
+		height: 38.131px;
+		left: 154px;
+		top: 19.869px;
+		overflow: visible;
+	}
+	#Ride {
+		left: 0px;
+		top: 23.131px;
+		position: absolute;
+		overflow: visible;
+		width: 29px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		color: rgba(101,109,116,1);
+	}
+	#Icon_awesome-car {
+		fill: rgba(101,109,116,1);
+	}
+	.Icon_awesome-car {
+		overflow: visible;
+		position: absolute;
+		width: 24.175px;
+		height: 18.131px;
+		left: 1.913px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Rechteck_71 {
+		fill: rgba(186,189,191,0.502);
+	}
+	.Rechteck_71 {
+		position: absolute;
+		overflow: visible;
+		width: 71px;
+		height: 9px;
+		left: 179px;
+		top: 206px;
+	}
+	#Whats_the_current_SOC {
+		left: 36px;
+		top: 373px;
+		position: absolute;
+		overflow: visible;
+		width: 241px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Product Sans;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 21px;
+		color: rgba(112,112,112,1);
+	}
+	#Whats_the_current_KM_count {
+		left: 36px;
+		top: 507px;
+		position: absolute;
+		overflow: visible;
+		width: 295px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Product Sans;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 21px;
+		color: rgba(112,112,112,1);
+	}
+	#KM {
+		left: 324px;
+		top: 574px;
+		position: absolute;
+		overflow: visible;
+		width: 51px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Product Sans;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 31px;
+		color: rgba(186,189,191,1);
+	}
+	#Gruppe_454 {
+		position: absolute;
+		width: 337px;
+		height: 70.321px;
+		left: 36px;
+		top: 259px;
+		overflow: visible;
+	}
+	#Gruppe_441 {
+		position: absolute;
+		width: 142px;
+		height: 31px;
+		left: 175px;
+		top: 39.321px;
+		overflow: visible;
+	}
+	#M___ZY__1234 {
+		left: 5px;
+		top: 2px;
+		position: absolute;
+		overflow: visible;
+		width: 133px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 22px;
+		color: rgba(186,189,191,1);
+	}
+	#Rechteck_68 {
+		fill: transparent;
+		stroke: rgba(186,189,191,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rechteck_68 {
+		position: absolute;
+		overflow: visible;
+		width: 142px;
+		height: 31px;
+		left: 0px;
+		top: 0px;
+	}
+	#Ellipse_11 {
+		fill: rgba(186,189,191,1);
+	}
+	.Ellipse_11 {
+		position: absolute;
+		overflow: visible;
+		width: 8px;
+		height: 8px;
+		left: 30px;
+		top: 6px;
+	}
+	#Ellipse_12 {
+		fill: rgba(186,189,191,1);
+	}
+	.Ellipse_12 {
+		position: absolute;
+		overflow: visible;
+		width: 8px;
+		height: 8px;
+		left: 30px;
+		top: 16px;
+	}
+	#Car {
+		transform: translate(-36px, -294.679px) matrix(1,0,0,1,36,294.6793) rotate(0deg);
+		transform-origin: center;
+		position: absolute;
+		width: 129.912px;
+		height: 70.321px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Fill_1 {
+		fill: rgba(255,255,255,1);
+	}
+	.Fill_1 {
+		filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
+		overflow: visible;
+		position: absolute;
+		width: 127.69px;
+		height: 65.905px;
+		transform: translate(-0.73px, -0.464px) matrix(1,0,0,1,1.8414,2.672) rotate(-2deg);
+		transform-origin: center;
+		left: 0px;
+		top: 0px;
+	}
+	#Rectangle {
+		fill: rgba(36,46,66,1);
+	}
+	.Rectangle {
+		width: 8.238px;
+		height: 20.595px;
+		position: absolute;
+		overflow: visible;
+		transform: translate(-0.73px, -0.464px) matrix(1,0,0,1,5.9604,23.2672) rotate(1deg);
+		transform-origin: center;
+	}
+	#Rectangle_bx {
+		fill: rgba(245,45,86,1);
+	}
+	.Rectangle_bx {
+		width: 8.238px;
+		height: 16.476px;
+		position: absolute;
+		overflow: visible;
+		transform: translate(-0.73px, -0.464px) matrix(1,0,0,1,6.212,10.9123) rotate(1deg);
+		transform-origin: center;
+	}
+	#Rectangle_by {
+		fill: rgba(36,46,66,1);
+	}
+	.Rectangle_by {
+		position: absolute;
+		overflow: visible;
+		width: 4.119px;
+		height: 20.595px;
+		left: 124.682px;
+		top: 24.938px;
+	}
+	#Rectangle_bz {
+		fill: rgba(245,45,86,1);
+	}
+	.Rectangle_bz {
+		width: 8.238px;
+		height: 16.476px;
+		position: absolute;
+		overflow: visible;
+		transform: translate(-0.73px, -0.464px) matrix(1,0,0,1,5.7088,39.7411) rotate(1deg);
+		transform-origin: center;
+	}
+	#Path {
+		fill: rgba(36,46,66,1);
+	}
+	.Path {
+		overflow: visible;
+		position: absolute;
+		width: 30.3px;
+		height: 49.579px;
+		left: 67.016px;
+		top: 10.446px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Path_b {
+		fill: rgba(36,46,66,1);
+	}
+	.Path_b {
+		overflow: visible;
+		position: absolute;
+		width: 20.059px;
+		height: 47.787px;
+		transform: translate(-0.73px, -0.464px) matrix(1,0,0,1,21.7381,10.6474) rotate(-2deg);
+		transform-origin: center;
+		left: 0px;
+		top: 0px;
+	}
+	#Path_5 {
+		fill: rgba(36,46,66,1);
+	}
+	.Path_5 {
+		overflow: visible;
+		position: absolute;
+		width: 41.19px;
+		height: 8.238px;
+		transform: translate(-0.73px, -0.464px) matrix(1,0,0,1,39.9135,6.1929) rotate(3deg);
+		transform-origin: center;
+		left: 0px;
+		top: 0px;
+	}
+	#Path_5_b {
+		fill: rgba(36,46,66,1);
+	}
+	.Path_5_b {
+		overflow: visible;
+		position: absolute;
+		width: 41.211px;
+		height: 8.238px;
+		transform: translate(-0.73px, -0.464px) matrix(1,0,0,1,37.9127,55.2194) rotate(-1deg);
+		transform-origin: center;
+		left: 0px;
+		top: 0px;
+	}
+	#Volkswagen_ID3 {
+		left: 175px;
+		top: 1.321px;
+		position: absolute;
+		overflow: visible;
+		width: 163px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Product Sans;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 21px;
+		color: rgba(112,112,112,1);
+	}
+	#Linie_5 {
+		fill: transparent;
+		stroke: rgba(186,189,191,1);
+		stroke-width: 3px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Linie_5 {
+		overflow: visible;
+		position: absolute;
+		width: 337px;
+		height: 3px;
+		left: 36.5px;
+		top: 437.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Ellipse_15 {
+		fill: rgba(0,157,212,1);
+	}
+	.Ellipse_15 {
+		position: absolute;
+		overflow: visible;
+		width: 20px;
+		height: 20px;
+		left: 180px;
+		top: 427px;
+	}
+	#Wiederholungsraster_2 {
+		position: absolute;
+		width: 280px;
+		height: 51px;
+		left: 37px;
+		top: 572px;
+		overflow: hidden;
+	}
+	#Gruppe_455 {
+		position: absolute;
+		width: 32px;
+		height: 51px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Rechteck_72 {
+		fill: transparent;
+		stroke: rgba(186,189,191,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rechteck_72 {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 51px;
+		left: 0px;
+		top: 0px;
+	}
+	#X {
+		left: 3px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 28px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Lucida Sans Typewriter;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 44px;
+		color: rgba(186,189,191,0.561);
+	}
+	#Gruppe_455_cb {
+		position: absolute;
+		width: 32px;
+		height: 51px;
+		left: 49px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Rechteck_72_cc {
+		fill: transparent;
+		stroke: rgba(186,189,191,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rechteck_72_cc {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 51px;
+		left: 0px;
+		top: 0px;
+	}
+	#X_cd {
+		left: 3px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 28px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Lucida Sans Typewriter;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 44px;
+		color: rgba(186,189,191,0.561);
+	}
+	#Gruppe_455_ce {
+		position: absolute;
+		width: 32px;
+		height: 51px;
+		left: 98px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Rechteck_72_cf {
+		fill: transparent;
+		stroke: rgba(186,189,191,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rechteck_72_cf {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 51px;
+		left: 0px;
+		top: 0px;
+	}
+	#X_cg {
+		left: 3px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 28px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Lucida Sans Typewriter;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 44px;
+		color: rgba(186,189,191,0.561);
+	}
+	#Gruppe_455_ch {
+		position: absolute;
+		width: 32px;
+		height: 51px;
+		left: 147px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Rechteck_72_ci {
+		fill: transparent;
+		stroke: rgba(186,189,191,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rechteck_72_ci {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 51px;
+		left: 0px;
+		top: 0px;
+	}
+	#X_cj {
+		left: 3px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 28px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Lucida Sans Typewriter;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 44px;
+		color: rgba(186,189,191,0.561);
+	}
+	#Gruppe_455_ck {
+		position: absolute;
+		width: 32px;
+		height: 51px;
+		left: 196px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Rechteck_72_cl {
+		fill: transparent;
+		stroke: rgba(186,189,191,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rechteck_72_cl {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 51px;
+		left: 0px;
+		top: 0px;
+	}
+	#X_cm {
+		left: 3px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 28px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Lucida Sans Typewriter;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 44px;
+		color: rgba(186,189,191,0.561);
+	}
+	#Gruppe_455_cn {
+		position: absolute;
+		width: 32px;
+		height: 51px;
+		left: 245px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Rechteck_72_co {
+		fill: transparent;
+		stroke: rgba(186,189,191,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rechteck_72_co {
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		height: 51px;
+		left: 0px;
+		top: 0px;
+	}
+	#X_cp {
+		left: 3px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 28px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Lucida Sans Typewriter;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 44px;
+		color: rgba(186,189,191,0.561);
+	}
+	#Gruppe_456 {
+		position: absolute;
+		width: 354px;
+		height: 64px;
+		left: 37px;
+		top: 722px;
+		overflow: visible;
+		--web-animation: fadein 0.30000001192092896s ease-out;
+		--web-action-type: page;
+		--web-action-target: End_Ride___Low_Battery.html;
+		cursor: pointer;
+	}
+	#Gruppe_442 {
+		position: absolute;
+		width: 354px;
+		height: 64px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Rechteck_6 {
+		fill: rgba(0,157,212,1);
+	}
+	.Rechteck_6 {
+		position: absolute;
+		overflow: visible;
+		width: 354px;
+		height: 64px;
+		left: 0px;
+		top: 0px;
+	}
+	#Rechteck_69 {
+		fill: rgba(0,157,212,1);
+	}
+	.Rechteck_69 {
+		position: absolute;
+		overflow: visible;
+		width: 354px;
+		height: 64px;
+		left: 0px;
+		top: 0px;
+	}
+	#Gruppe_443 {
+		position: absolute;
+		width: 77px;
+		height: 41px;
+		left: 73px;
+		top: 12px;
+		overflow: visible;
+	}
+	#Swipe_to {
+		opacity: 0.85;
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 54px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Product Sans Medium;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(255,255,255,1);
+	}
+	#END_TRIP {
+		left: 0px;
+		top: 19px;
+		position: absolute;
+		overflow: visible;
+		width: 78px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Product Sans;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 17px;
+		color: rgba(255,255,255,1);
+	}
+	#Ellipse_13 {
+		fill: rgba(255,255,255,1);
+	}
+	.Ellipse_13 {
+		position: absolute;
+		overflow: visible;
+		width: 47px;
+		height: 47px;
+		left: 16px;
+		top: 9px;
+	}
+	#Icon_awesome-lock {
+		fill: rgba(255,255,255,1);
+	}
+	.Icon_awesome-lock {
+		overflow: visible;
+		position: absolute;
+		width: 19.25px;
+		height: 22px;
+		left: 307.875px;
+		top: 21px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Icon_awesome-unlock {
+		fill: rgba(0,157,212,1);
+	}
+	.Icon_awesome-unlock {
+		overflow: visible;
+		position: absolute;
+		width: 15.75px;
+		height: 18px;
+		left: 31.625px;
+		top: 23.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Gruppe_459 {
+		position: absolute;
+		width: 336px;
+		height: 31px;
+		left: 37px;
+		top: 656px;
+		overflow: visible;
+	}
+	#CAR_IS_CLEAN_AND_INTACT {
+		left: 40px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 297px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Product Sans;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 23px;
+		color: rgba(186,189,191,1);
+	}
+	#Rechteck_73 {
+		fill: transparent;
+		stroke: rgba(186,189,191,1);
+		stroke-width: 3px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rechteck_73 {
+		position: absolute;
+		overflow: visible;
+		width: 27px;
+		height: 27px;
+		left: 0px;
+		top: 4px;
+	}
+</style>
+</head>
+<body>
+<div id="End_Ride">
+	<svg class="Menu_Bottom">
+		<rect id="Menu_Bottom" rx="25" ry="25" x="0" y="0" width="428" height="737">
+		</rect>
+	</svg>
+	<div id="Hi_Sam_Thanks_for_driving_with">
+		<span>Hi, Sam.<br/>Thanks for driving with us!</span>
+	</div>
+	<div id="Komponente_1__1" class="Komponente_1___1">
+		<div id="Icon_ionic-ios-notifications">
+			<svg class="Pfad_8" viewBox="14.604 28.336 6.177 3.4">
+				<path id="Pfad_8" d="M 17.69579315185547 31.73573112487793 C 19.69076538085938 31.73573112487793 20.78126525878906 30.32449722290039 20.78126525878906 28.3359375 L 14.60390758514404 28.3359375 C 14.60390758514404 30.32449722290039 15.69440650939941 31.73573112487793 17.69579315185547 31.73573112487793 Z">
+				</path>
+			</svg>
+			<svg class="Pfad_9" viewBox="6.761 3.93 20.52 21.047">
+				<path id="Pfad_9" d="M 27.02140426635742 22.93721771240234 C 26.03354072570801 21.63503456115723 24.08988571166992 20.87168312072754 24.08988571166992 15.04071617126465 C 24.08988571166992 9.05579948425293 21.4470272064209 6.650286674499512 18.98377990722656 6.072963237762451 C 18.75285339355469 6.015231132507324 18.58606910705566 5.938254356384277 18.58606910705566 5.694495677947998 L 18.58606910705566 5.508470058441162 C 18.58606910705566 4.648900032043457 17.88045120239258 3.924038410186768 17.0208797454834 3.930453062057495 C 16.16131019592285 3.91762375831604 15.45569324493408 4.648900032043457 15.45569324493408 5.508470058441162 L 15.45569324493408 5.694495677947998 C 15.45569324493408 5.931839466094971 15.28891181945801 6.015231132507324 15.05798149108887 6.072963237762451 C 12.5883207321167 6.656701564788818 9.951877593994141 9.05579948425293 9.951877593994141 15.04071617126465 C 9.951877593994141 20.87168312072754 8.008221626281738 21.62861633300781 7.020358085632324 22.93721580505371 C 6.385302543640137 23.77754020690918 6.988284111022949 24.97709274291992 8.04029655456543 24.97709274291992 L 17.04653739929199 24.97709274291992 L 26.00787925720215 24.97709274291992 C 27.05347633361816 24.97709274291992 27.65646171569824 23.77112770080566 27.02140426635742 22.93721771240234 Z">
+				</path>
+			</svg>
+		</div>
+		<svg class="Ellipse_1">
+			<ellipse id="Ellipse_1" rx="4" ry="4" cx="4" cy="4">
+			</ellipse>
+		</svg>
+	</div>
+	<img id="Ellipse_10" src="{% static 'img/user_face.png' %}">
+		
+	<img id="munich_airport_logo" src="{% static 'img/munich_airport_logo.png' %}">
+		
+	<div id="Gruppe_39">
+		<svg class="Menu_Bottom_">
+			<rect id="Menu_Bottom_" rx="25" ry="25" x="0" y="0" width="428" height="105">
+			</rect>
+		</svg>
+		<div id="Gruppe_17">
+			<svg class="Pfad_1" viewBox="50.148 254.735 17.123 21.55">
+				<path id="Pfad_1" d="M 66.45774841308594 276.2848815917969 C 66.00852203369141 276.2848815917969 65.64491271972656 275.9212646484375 65.64491271972656 275.4720458984375 L 65.64491271972656 263.2649536132812 C 65.64491271972656 262.7636413574219 65.44116973876953 262.2732849121094 65.08568572998047 261.9199829101562 L 60.04666519165039 256.9091491699219 C 59.30970001220703 256.176513671875 58.10941696166992 256.176513671875 57.37191009521484 256.9096984863281 L 52.33289337158203 261.9199829101562 C 51.9774169921875 262.2732849121094 51.77366256713867 262.7636413574219 51.77366256713867 263.2649536132812 L 51.77366256713867 272.7626342773438 C 51.77366256713867 273.8084411621094 52.62441635131836 274.6592102050781 53.67026138305664 274.6592102050781 L 62.19579315185547 274.6592102050781 C 62.64448547363281 274.6592102050781 63.00862884521484 275.0228271484375 63.00862884521484 275.4720458984375 C 63.00862884521484 275.9212646484375 62.64448547363281 276.2848815917969 62.19579315185547 276.2848815917969 L 53.67026138305664 276.2848815917969 C 51.7281379699707 276.2848815917969 50.14800262451172 274.7047424316406 50.14800262451172 272.7626342773438 L 50.14800262451172 263.2649536132812 C 50.14800262451172 262.333984375 50.52677917480469 261.423583984375 51.18625259399414 260.7673645019531 L 56.22581100463867 255.7565460205078 C 57.59516525268555 254.3947906494141 59.82341384887695 254.3947906494141 61.1927604675293 255.7565460205078 L 66.23231506347656 260.7673645019531 C 66.89179992675781 261.423583984375 67.27058410644531 262.333984375 67.27058410644531 263.2649536132812 L 67.27058410644531 275.4720458984375 C 67.27058410644531 275.9212646484375 66.90696716308594 276.2848815917969 66.45774841308594 276.2848815917969 Z">
+				</path>
+			</svg>
+			<div id="Home">
+				<span>Home</span>
+			</div>
+		</div>
+		<div id="Gruppe_20">
+			<div id="Gruppe_16">
+				<svg class="Pfad_2" viewBox="109.021 254.678 9.851 9.851">
+					<path id="Pfad_2" d="M 113.9467620849609 264.5289306640625 C 111.2308197021484 264.5289306640625 109.02099609375 262.3191223144531 109.02099609375 259.6037292480469 C 109.02099609375 256.8877868652344 111.2308197021484 254.6779479980469 113.9467620849609 254.6779479980469 C 116.6627044677734 254.6779479980469 118.8719787597656 256.8877868652344 118.8719787597656 259.6037292480469 C 118.8719787597656 262.3191223144531 116.6627044677734 264.5289306640625 113.9467620849609 264.5289306640625 Z M 113.9467620849609 256.3036499023438 C 112.1271057128906 256.3036499023438 110.6466522216797 257.7840576171875 110.6466522216797 259.6037292480469 C 110.6466522216797 261.4228515625 112.1271057128906 262.9032897949219 113.9467620849609 262.9032897949219 C 115.7664184570312 262.9032897949219 117.2463226318359 261.4228515625 117.2463226318359 259.6037292480469 C 117.2463226318359 257.7840576171875 115.7664184570312 256.3036499023438 113.9467620849609 256.3036499023438 Z">
+					</path>
+				</svg>
+				<svg class="Pfad_3" viewBox="100.843 275.09 19.063 10.52">
+					<path id="Pfad_3" d="M 119.0939025878906 285.6096496582031 C 118.6452255249023 285.6096496582031 118.2810745239258 285.2460632324219 118.2810745239258 284.7968139648438 C 118.2810745239258 280.3408508300781 114.6558303833008 276.7156372070312 110.2004318237305 276.7156372070312 C 106.7274780273438 276.7156372070312 103.6490173339844 278.9254760742188 102.5408401489258 282.2147521972656 C 102.4032135009766 282.622802734375 102.469856262207 283.0595397949219 102.7239990234375 283.4133911132812 C 102.9846496582031 283.77587890625 103.3889007568359 283.9839782714844 103.8337936401367 283.9839782714844 L 115.0887985229492 283.9839782714844 C 115.5380249023438 283.9839782714844 115.9016418457031 284.3475952148438 115.9016418457031 284.7968139648438 C 115.9016418457031 285.2460632324219 115.5380249023438 285.6096496582031 115.0887985229492 285.6096496582031 L 103.8337936401367 285.6096496582031 C 102.8735580444336 285.6096496582031 101.9653549194336 285.1430969238281 101.4039688110352 284.3616333007812 C 100.8404006958008 283.5776062011719 100.6935501098633 282.6054382324219 101.0002593994141 281.695556640625 C 102.331672668457 277.7446899414062 106.0289916992188 275.0899963378906 110.2004318237305 275.0899963378906 C 115.5526657104492 275.0899963378906 119.9067306518555 279.4446105957031 119.9067306518555 284.7968139648438 C 119.9067306518555 285.2460632324219 119.5431442260742 285.6096496582031 119.0939025878906 285.6096496582031 Z">
+					</path>
+				</svg>
+			</div>
+			<div id="Profile">
+				<span>Profile</span>
+			</div>
+		</div>
+		<div id="Gruppe_440">
+			<div id="Gruppe_19">
+				<div id="Logbook">
+					<span>Logbook</span>
+				</div>
+			</div>
+			<svg class="Icon_material-data-usage" viewBox="3 3.075 19.113 19.066">
+				<path id="Icon_material-data-usage" d="M 13.51237487792969 3.074999809265137 L 13.51237487792969 5.970681190490723 C 16.75209617614746 6.438959121704102 19.24639511108398 9.210404396057129 19.24639511108398 12.58392143249512 C 19.24639511108398 13.44402503967285 19.07437515258789 14.25634384155273 18.78767585754395 15.01132392883301 L 21.27241706848145 16.4734992980957 C 21.80759239196777 15.28846836090088 22.11340713500977 13.96964168548584 22.11340713500977 12.58392143249512 C 22.11340713500977 7.633547782897949 18.33851051330566 3.552834987640381 13.51237487792969 3.074999809265137 Z M 12.5567045211792 19.27361297607422 C 8.858260154724121 19.27361297607422 5.867011070251465 16.2823657989502 5.867011070251465 12.58392143249512 C 5.867011070251465 9.210404396057129 8.361310958862305 6.438959121704102 11.60103511810303 5.970681190490723 L 11.60103511810303 3.074999809265137 C 6.765340805053711 3.55283522605896 3 7.623991012573242 3 12.58392143249512 C 3 17.85922050476074 7.271846771240234 22.140625 12.54714870452881 22.140625 C 15.71041774749756 22.140625 18.51053047180176 20.60199546813965 20.24984931945801 18.23193359375 L 17.76510810852051 16.76975631713867 C 16.54184913635254 18.29883003234863 14.66873645782471 19.27361297607422 12.5567045211792 19.27361297607422 Z">
+				</path>
+			</svg>
+		</div>
+		<div id="Gruppe_439">
+			<div id="Ride">
+				<span>Ride</span>
+			</div>
+			<svg class="Icon_awesome-car" viewBox="0 4.5 24.175 18.131">
+				<path id="Icon_awesome-car" d="M 23.60797882080078 9.788273811340332 L 20.78111267089844 9.788273811340332 L 19.99542617797852 7.824057579040527 C 19.18801879882812 5.804597854614258 17.26110458374023 4.5 15.08582973480225 4.5 L 9.08930492401123 4.5 C 6.914501667022705 4.5 4.987115383148193 5.804597854614258 4.179236888885498 7.824057579040527 L 3.393550395965576 9.788273811340332 L 0.567156970500946 9.788273811340332 C 0.1983942985534668 9.788273811340332 -0.07215757668018341 10.13484573364258 0.01755422167479992 10.49227523803711 L 0.3008546233177185 11.6254768371582 C 0.3636528849601746 11.87761497497559 0.5902931690216064 12.05467700958252 0.8504573702812195 12.05467700958252 L 1.798097133636475 12.05467700958252 C 1.163976550102234 12.60853004455566 0.7555517554283142 13.41357517242432 0.7555517554283142 14.32108020782471 L 0.7555517554283142 16.58748245239258 C 0.7555517554283142 17.34861755371094 1.046406865119934 18.03561973571777 1.511019468307495 18.56727981567383 L 1.511019468307495 21.12028884887695 C 1.511019468307495 21.95460891723633 2.187635183334351 22.63122367858887 3.021954774856567 22.63122367858887 L 4.532890319824219 22.63122367858887 C 5.367209911346436 22.63122367858887 6.043825626373291 21.95460891723633 6.043825626373291 21.12028884887695 L 6.043825626373291 19.60935401916504 L 18.13130950927734 19.60935401916504 L 18.13130950927734 21.12028884887695 C 18.13130950927734 21.95460891723633 18.80792427062988 22.63122367858887 19.64224433898926 22.63122367858887 L 21.15317916870117 22.63122367858887 C 21.98749732971191 22.63122367858887 22.66411590576172 21.95460891723633 22.66411590576172 21.12028884887695 L 22.66411590576172 18.56727981567383 C 23.12872886657715 18.03609275817871 23.41958236694336 17.34909057617188 23.41958236694336 16.58748245239258 L 23.41958236694336 14.32108020782471 C 23.41958236694336 13.41357517242432 23.01115798950195 12.60853004455566 22.37751007080078 12.05467700958252 L 23.32514953613281 12.05467700958252 C 23.58531188964844 12.05467700958252 23.81195449829102 11.87761497497559 23.8747501373291 11.6254768371582 L 24.15805053710938 10.49227523803711 C 24.24728965759277 10.13484477996826 23.97673797607422 9.788273811340332 23.60797500610352 9.788273811340332 Z M 6.984855651855469 8.946399688720703 C 7.329065322875977 8.086111068725586 8.162440299987793 7.521870613098145 9.08930492401123 7.521870613098145 L 15.08582973480225 7.521870613098145 C 16.01269340515137 7.521870613098145 16.8460693359375 8.086111068725586 17.19027900695801 8.946399688720703 L 18.13130950927734 11.29920959472656 L 6.043825626373291 11.29920959472656 L 6.984855175018311 8.946399688720703 Z M 4.532890319824219 16.57803916931152 C 3.626328945159912 16.57803916931152 3.021954774856567 15.97555351257324 3.021954774856567 15.07182598114014 C 3.021954774856567 14.16809749603271 3.626328945159912 13.56561279296875 4.532890319824219 13.56561279296875 C 5.439451694488525 13.56561279296875 6.799293041229248 14.92120552062988 6.799293041229248 15.82493305206299 C 6.799293041229248 16.72865867614746 5.439451694488525 16.57803916931152 4.532890319824219 16.57803916931152 Z M 19.64224433898926 16.57803916931152 C 18.73568344116211 16.57803916931152 17.37584114074707 16.72866058349609 17.37584114074707 15.82493305206299 C 17.37584114074707 14.92120456695557 18.73568344116211 13.56561279296875 19.64224433898926 13.56561279296875 C 20.54880523681641 13.56561279296875 21.15317916870117 14.16809844970703 21.15317916870117 15.07182693481445 C 21.15317916870117 15.97555541992188 20.54880523681641 16.57804107666016 19.64224433898926 16.57804107666016 Z">
+				</path>
+			</svg>
+		</div>
+	</div>
+	<svg class="Rechteck_71">
+		<rect id="Rechteck_71" rx="4.5" ry="4.5" x="0" y="0" width="71" height="9">
+		</rect>
+	</svg>
+	<div id="Gruppe_454">
+		<div id="Car">
+			<svg class="Fill_1" viewBox="0 0 127.69 65.905">
+				<path id="Fill_1" d="M 127.1867065429688 39.10509872436523 L 127.5918121337891 31.34734916687012 L 127.5731506347656 31.34654998779297 L 127.6089248657227 30.66991424560547 C 128.0987854003906 26.46869659423828 126.2093124389648 15.36850929260254 126.2093124389648 15.36850929260254 C 124.7521591186523 10.96038818359375 119.3356552124023 8.7052001953125 114.8327865600586 7.57401180267334 C 113.789306640625 6.226331233978271 112.0195693969727 5.282076358795166 109.9598007202148 5.168637752532959 L 97.76606750488281 4.498392581939697 C 96.12929534912109 4.408121109008789 94.60993957519531 4.863472461700439 93.46769714355469 5.672719955444336 L 91.68474578857422 5.574460029602051 L 86.26513671875 5.27568531036377 L 84.49151611328125 0.1022543534636497 L 82.64402770996094 5.568862051557536e-16 L 83.11212158203125 5.10233211517334 L 50.71963882446289 3.318473339080811 C 49.66681671142578 2.388597726821899 48.20966720581055 1.767881870269775 46.56822967529297 1.676811575889587 L 16.77280426025391 0.03594879433512688 C 14.94631004333496 -0.06470783054828644 13.27221775054932 0.5128694772720337 12.09343242645264 1.501061916351318 C 8.45832633972168 1.835785150527954 2.866873502731323 2.940611362457275 2.308583736419678 6.583422660827637 L 1.153903007507324 28.71110343933105 L 3.414790033449662e-16 50.83638763427734 C 0.1757291704416275 54.51994323730469 5.62100076675415 56.23030471801758 9.199344635009766 56.96366119384766 C 10.26927089691162 58.07727813720703 11.87260437011719 58.83539581298828 13.69987678527832 58.93605041503906 L 43.49452590942383 60.5769157409668 C 45.13673782348633 60.66718673706055 46.65065002441406 60.21103668212891 47.79288864135742 59.40178680419922 L 80.39920043945312 61.19683074951172 L 79.48635101318359 65.80226898193359 L 81.33305358886719 65.90452575683594 L 83.44103240966797 61.36459350585938 L 88.75800323486328 61.65697860717773 L 90.56972503662109 61.78799057006836 C 91.62643432617188 62.70268630981445 93.06570434570312 63.30982208251953 94.69313812255859 63.39929580688477 L 106.8868789672852 64.06954193115234 C 108.5461959838867 64.16060638427734 110.0842208862305 63.69327545166016 111.2318954467773 62.86565399169922 C 115.9392623901367 62.31044387817383 122.0703430175781 60.72390365600586 124.0756759643555 56.27344512939453 C 124.0756759643555 56.27344512939453 127.1081695556641 45.4456672668457 127.0584106445312 41.21489334106445 L 127.1688232421875 39.10430145263672 L 127.1867065429688 39.10509872436523 Z">
+				</path>
+			</svg>
+			<svg class="Rectangle">
+				<rect id="Rectangle" rx="1" ry="1" x="0" y="0" width="8.238" height="20.595">
+				</rect>
+			</svg>
+			<svg class="Rectangle_bx">
+				<rect id="Rectangle_bx" rx="1" ry="1" x="0" y="0" width="8.238" height="16.476">
+				</rect>
+			</svg>
+			<svg class="Rectangle_by">
+				<rect id="Rectangle_by" rx="1" ry="1" x="0" y="0" width="4.119" height="20.595">
+				</rect>
+			</svg>
+			<svg class="Rectangle_bz">
+				<rect id="Rectangle_bz" rx="1" ry="1" x="0" y="0" width="8.238" height="16.476">
+				</rect>
+			</svg>
+			<svg class="Path" viewBox="0 0 30.3 49.579">
+				<path id="Path" d="M 30.12355613708496 27.00300407409668 L 30.09012222290039 27.00140571594238 C 29.45562934875488 35.13302230834961 28.08245277404785 40.37036514282227 26.48767280578613 43.72878265380859 C 24.7296028137207 47.42910766601562 22.70638656616211 48.84948348999023 21.12326812744141 49.34318161010742 C 21.09994125366211 49.35116958618164 21.07661437988281 49.35436630249023 21.05562019348145 49.36155700683594 C 20.75547981262207 49.45182800292969 20.47478103637695 49.50934600830078 20.20963096618652 49.54050064086914 C 19.11715507507324 49.67790603637695 18.39169120788574 49.40469360351562 18.39169120788574 49.40469360351562 L 0 41.62697219848633 C 2.642158031463623 39.94856643676758 4.050323963165283 28.3011531829834 4.496644973754883 23.89862442016602 C 4.51141881942749 19.47053146362305 4.320138454437256 7.740839958190918 1.870038270950317 5.783627986907959 L 20.96542167663574 0.06936737895011902 C 20.96542167663574 0.06936737895011902 21.71577072143555 -0.1239572539925575 22.78725242614746 0.1348740607500076 C 23.04229354858398 0.1931910067796707 23.30821990966797 0.2802670001983643 23.59280776977539 0.396900862455368 C 23.61768913269043 0.4064871966838837 23.64801406860352 0.417671263217926 23.67523002624512 0.4288553595542908 C 25.19769477844238 1.096704006195068 27.06151390075684 2.731974601745605 28.42769241333008 6.6048583984375 C 29.66090774536133 10.12065029144287 30.48123359680176 15.47702121734619 30.26585006713867 23.62940788269043 L 30.29928588867188 23.63100624084473 C 30.27129364013672 24.20538711547852 30.24019050598145 24.76539039611816 30.20908737182617 25.31660461425781 C 30.18265151977539 25.86701965332031 30.15621376037598 26.42782211303711 30.12355613708496 27.00300407409668 L 30.12355613708496 27.00300407409668 Z">
+				</path>
+			</svg>
+			<svg class="Path_b" viewBox="0 0 20.059 47.787">
+				<path id="Path_b" d="M 20.04245567321777 5.829666614532471 L 18.83568000793457 28.95832252502441 L 18.10554695129395 42.94160461425781 L 18.06044769287109 43.81795501708984 C 14.26049995422363 48.3538932800293 5.667654514312744 48.11423873901367 0 47.36091232299805 L 2.470316648483276 0.01315181143581867 C 8.183847427368164 -0.1130684018135071 16.75336456298828 0.592326819896698 20.05878448486328 5.518110752105713 L 20.04245567321777 5.829666614532471 Z">
+				</path>
+			</svg>
+			<svg class="Path_5" viewBox="0 0 41.19 8.238">
+				<path id="Path_5" d="M 0.7807671427726746 0 C 5.529962062835693 0 41.18950653076172 0 41.18950653076172 0 C 41.18950653076172 0 23.76177787780762 8.238065719604492 19.03411865234375 8.238065719604492 C 14.30645847320557 8.238065719604492 -3.968427658081055 1.408686518534997e-15 0.7807671427726746 0 Z">
+				</path>
+			</svg>
+			<svg class="Path_5_b" viewBox="0 0 41.211 8.238">
+				<path id="Path_5_b" d="M 0.802486777305603 8.238065719604492 C 5.551681518554688 8.238065719604492 41.21122741699219 8.238065719604492 41.21122741699219 8.238065719604492 C 41.21122741699219 8.238065719604492 23.19018173217773 0 18.46252059936523 0 C 13.73486042022705 0 -3.946708202362061 8.238065719604492 0.802486777305603 8.238065719604492 Z">
+				</path>
+			</svg>
+		</div>
+		<div id="Volkswagen_ID3">
+			<span>Volkswagen ID.3</span>
+		</div>
+	</div>
+	<div  style="position:absolute; z-index: 999; width: 400px; top: 380px; left:20px">
+		<form action="" method="post">
+			{% csrf_token %}
+			{{ form }}
+			<input type="submit" value="Submit" class="btn btn-primary mb-2" />
+		</form>
+	</div>
+	<div onclick="application.goToTargetView(event)" id="Gruppe_456">
+		<div id="Gruppe_442">
+			<svg class="Rechteck_6">
+				<rect id="Rechteck_6" rx="17" ry="17" x="0" y="0" width="354" height="64">
+				</rect>
+			</svg>
+			<svg class="Rechteck_69">
+				<rect id="Rechteck_69" rx="17" ry="17" x="0" y="0" width="354" height="64">
+				</rect>
+			</svg>
+			<div id="Gruppe_443">
+				<div id="Swipe_to">
+					<span>Swipe to</span>
+				</div>
+				<div id="END_TRIP">
+					<span>END TRIP</span>
+				</div>
+			</div>
+		</div>
+		<svg class="Ellipse_13">
+			<ellipse id="Ellipse_13" rx="23.5" ry="23.5" cx="23.5" cy="23.5">
+			</ellipse>
+		</svg>
+		<svg class="Icon_awesome-lock" viewBox="0 0 19.25 22">
+			<path id="Icon_awesome-lock" d="M 17.1875 9.625 L 16.15625 9.625 L 16.15625 6.53125 C 16.15625 2.930468559265137 13.22578048706055 0 9.625 0 C 6.024219036102295 0 3.09375 2.930468559265137 3.09375 6.53125 L 3.09375 9.625 L 2.0625 9.625 C 0.923828125 9.625 0 10.548828125 0 11.6875 L 0 19.9375 C 0 21.076171875 0.923828125 22 2.0625 22 L 17.1875 22 C 18.326171875 22 19.25 21.076171875 19.25 19.9375 L 19.25 11.6875 C 19.25 10.548828125 18.326171875 9.625 17.1875 9.625 Z M 12.71875 9.625 L 6.53125 9.625 L 6.53125 6.53125 C 6.53125 4.825390815734863 7.919140338897705 3.4375 9.625 3.4375 C 11.33085918426514 3.4375 12.71875 4.825390815734863 12.71875 6.53125 L 12.71875 9.625 Z">
+			</path>
+		</svg>
+		<svg class="Icon_awesome-unlock" viewBox="0 0 15.75 18">
+			<path id="Icon_awesome-unlock" d="M 14.06247520446777 8.999950408935547 L 5.343740463256836 8.999950408935547 L 5.343740463256836 5.37534761428833 C 5.343740463256836 3.983162403106689 6.458191871643066 2.826524019241333 7.850376605987549 2.812461614608765 C 9.256624221801758 2.798399209976196 10.40623092651367 3.940975189208984 10.40623092651367 5.343707084655762 L 10.40623092651367 5.906206130981445 C 10.40623092651367 6.373783111572266 10.78240299224854 6.749954700469971 11.24997997283936 6.749954700469971 L 12.37497806549072 6.749954700469971 C 12.84255504608154 6.749954700469971 13.21872615814209 6.373783111572266 13.21872615814209 5.906206130981445 L 13.21872615814209 5.343707084655762 C 13.21872615814209 2.390587329864502 10.81052780151367 -0.01058023516088724 7.857408046722412 -3.337866291985847e-05 C 4.904288291931152 0.0105134779587388 2.531245470046997 2.443321704864502 2.531245470046997 5.396441459655762 L 2.531245470046997 8.999950408935547 L 1.687497019767761 8.999950408935547 C 0.7558580040931702 8.999950408935547 0 9.75580883026123 0 10.6874475479126 L 0 16.31243705749512 C 0 17.24407577514648 0.7558580040931702 17.99993324279785 1.687497019767761 17.99993324279785 L 14.06247520446777 17.99993324279785 C 14.99411392211914 17.99993324279785 15.74997138977051 17.24407577514648 15.74997138977051 16.31243705749512 L 15.74997138977051 10.6874475479126 C 15.74997138977051 9.75580883026123 14.99411392211914 8.999950408935547 14.06247520446777 8.999950408935547 Z">
+			</path>
+		</svg>
+	</div>
+</div>
+</body>
+</html>

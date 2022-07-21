@@ -1,0 +1,18 @@
+<svg id="Group_445" data-name="Group 445" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="51" height="51" viewBox="0 0 51 51">
+  <defs>
+    <filter id="Oval" x="4.619" y="6.619" width="41.761" height="41.761" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#222b45" flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <circle id="Ellipse_2" data-name="Ellipse 2" cx="25.5" cy="25.5" r="25.5" fill="#ef1d52" opacity="0.07"/>
+  <circle id="Ellipse_1" data-name="Ellipse 1" cx="17.5" cy="17.5" r="17.5" transform="translate(8 8)" fill="#ef1d52" opacity="0.08"/>
+  <g id="Group" transform="translate(18.637 18.637)">
+    <g transform="matrix(1, 0, 0, 1, -18.64, -18.64)" filter="url(#Oval)">
+      <circle id="Oval-2" data-name="Oval" cx="5.103" cy="5.103" r="5.103" transform="matrix(0.89, -0.45, 0.45, 0.89, 18.64, 23.27)" fill="#ef1d52" stroke="#fff" stroke-miterlimit="10" stroke-width="3"/>
+    </g>
+  </g>
+</svg>

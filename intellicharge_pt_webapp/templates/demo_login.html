@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntelliCharge Demo</title> 
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="font-helvetica bg-gray-light">
+    <div class="wrapper--mobile  bg-white ">
+        <!-- start coding for header  -->
+        <header class="w-100 sticky-top bg-white d-flex justify-content-between align-items-center pl-35 pr-15 py-3">
+            <figure class="m-0 p-0">
+                <img class="logo-mobile" src='{% static "img/munich_airport_logo.png" %}' alt="munich_airport_logo">
+            </figure>
+        </header>
+        <main class="main--area ">
+            <section class="title-main pl-35 pr-35 pt-2">
+            <section class="title-main pl-35 pr-35 pt-2">
+                <h1 class="font-product-sans"  style="">Welcome to our demo!</h1>
+                <p class="font-product-sans" style="color:#787470;margin-bottom: 50px;text-align: center;">Munich Airport's charging solution powered by <strong>IntelliCharge</strong></p>
+                <p class="font-product-sans" style="color:#787470;text-align: center;">Select which role you want to test out</p>
+            </section>
+            <section class="pl-35 pr-35 "> 
+                <div class="relocated--box font-product-sans justify-content-between  mb-2 d-flex gap-3 align-items-center position-relative">
+                    <div class="d-flex gap-3 align-items-center">
+                        <div class="">
+                            <p class="relocated--status">Experience the parking process</p>
+                            <h3 class="relocated--title">USER</h3>
+                            <a href="/checkout" class="stretched-link"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="relocated--box font-product-sans justify-content-between  mb-2 d-flex gap-3 align-items-center position-relative">
+                    <div class="d-flex gap-3 align-items-center">
+                        <div class="">
+                            <p class="relocated--status">Maintain the fleet</p>
+                            <h3 class="relocated--title">MAINTENANCE CREW</h3>
+                            <a href="/management/maintenance" class="stretched-link"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="relocated--box font-product-sans justify-content-between  mb-2 d-flex gap-3 align-items-center position-relative">
+                    <div class="d-flex gap-3 align-items-center">
+                        <div class="">
+                            <p class="relocated--status">Administrate the fleet</p>
+                            <h3 class="relocated--title">FLEET MANAGER</h3>
+                            <a href="/management/pools" class="stretched-link"></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="title-main pl-35 pr-35 pt-2" style="margin-top: 50px;">
+                <p class="font-product-sans" style="color:#787470;text-align: center;font-size: 13px;margin-bottom: 15px;"><strong> Tim Körppen</strong> <br> M.Sc. Information Systems <br> tim.koerppen@tum.de</p>
+                <p class="font-product-sans" style="color:#787470;text-align: center;font-size: 13px;margin-bottom: 15px;"><strong> Prodyumna Mohata</strong> <br> M.Sc. Management <br> p.mohanta@tum.de</p>
+                <p class="font-product-sans" style="color:#787470;text-align: center;font-size: 13px;margin-bottom: 15px;"><strong>Maria Quesada</strong> <br> M.Sc. Management & Technology <br> maria.quesada@tum.de</p>
+                <p class="font-product-sans" style="color:#787470;text-align: center;font-size: 13px;"><strong>Valentin Mühldorfer</strong> <br> B. Sc. Management & Technology <br> valentin.muehldorfer@tum.de</p>
+            </section>
+        </main>
+        <footer class="footer--mobile font-montserrat">
+            <ul class="footer--items list-unstyled d-flex justify-content-between align-items-center">
+                <li class="footer--item">
+                   <a href="#" class="d-flex flex-column gap-2 align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17.123" height="21.55" viewBox="0 0 17.123 21.55">
+                            <path id="Path_1" data-name="Path 1" d="M66.458,276.285a.812.812,0,0,1-.813-.813V263.265a1.909,1.909,0,0,0-.559-1.345l-5.039-5.011a1.9,1.9,0,0,0-2.675,0l-5.039,5.01a1.909,1.909,0,0,0-.559,1.345v9.5a1.9,1.9,0,0,0,1.9,1.9H62.2a.813.813,0,0,1,0,1.626H53.67a3.526,3.526,0,0,1-3.522-3.522v-9.5a3.547,3.547,0,0,1,1.038-2.5l5.04-5.011a3.53,3.53,0,0,1,4.967,0l5.04,5.011a3.547,3.547,0,0,1,1.038,2.5v12.207A.812.812,0,0,1,66.458,276.285Z" transform="translate(-50.148 -254.735)" />
+                        </svg>
+                        <p class="footer--title">Home</p>
+                   </a>
+                </li>
+                <li class="footer--item">
+                   <a href="#" class="is--active   d-flex flex-column gap-2 align-items-center">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="24.175" height="18.131" viewBox="0 0 24.175 18.131">
+                         <path id="Icon_awesome-car" data-name="Icon awesome-car" d="M23.608,9.788H20.781L20,7.824A5.261,5.261,0,0,0,15.086,4.5h-6a5.263,5.263,0,0,0-4.91,3.324L3.394,9.788H.567a.566.566,0,0,0-.55.7L.3,11.625a.566.566,0,0,0,.55.429H1.8A3,3,0,0,0,.756,14.321v2.266a3,3,0,0,0,.755,1.98V21.12a1.511,1.511,0,0,0,1.511,1.511H4.533A1.511,1.511,0,0,0,6.044,21.12V19.609H18.131V21.12a1.511,1.511,0,0,0,1.511,1.511h1.511a1.511,1.511,0,0,0,1.511-1.511V18.567a3,3,0,0,0,.755-1.98V14.321a3,3,0,0,0-1.042-2.266h.948a.566.566,0,0,0,.55-.429l.283-1.133a.567.567,0,0,0-.55-.7ZM6.985,8.946a2.267,2.267,0,0,1,2.1-1.425h6a2.267,2.267,0,0,1,2.1,1.425l.941,2.353H6.044l.941-2.353ZM4.533,16.578a1.425,1.425,0,0,1-1.511-1.506,1.425,1.425,0,0,1,1.511-1.506A2.907,2.907,0,0,1,6.8,15.825C6.8,16.729,5.439,16.578,4.533,16.578Zm15.109,0c-.907,0-2.266.151-2.266-.753a2.907,2.907,0,0,1,2.266-2.259,1.425,1.425,0,0,1,1.511,1.506,1.425,1.425,0,0,1-1.511,1.506Z" transform="translate(0 -4.5)"  />
+                    </svg> 
+                        <p class="footer--title">Ride</p>
+                   </a>
+                </li>
+                <li class="footer--item">
+                   <a href="#" class=" d-flex flex-column gap-2 align-items-center">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="22.464" height="23.011" viewBox="0 0 22.464 23.011">
+                        <path id="clipboard-pulse" d="M15.441,2.157a.764.764,0,0,0-.8-.719H9.825a.764.764,0,0,0-.8.719V3.6a.764.764,0,0,0,.8.719h4.814a.764.764,0,0,0,.8-.719Zm-8.023,0A2.292,2.292,0,0,1,9.825,0h4.814a2.292,2.292,0,0,1,2.407,2.157V3.6a2.292,2.292,0,0,1-2.407,2.157H9.825A2.292,2.292,0,0,1,7.418,3.6Zm-3.209,0h1.6V3.6h-1.6A1.528,1.528,0,0,0,2.6,5.034v15.1a1.528,1.528,0,0,0,1.6,1.438H20.255a1.528,1.528,0,0,0,1.6-1.438V5.034a1.528,1.528,0,0,0-1.6-1.438h-1.6V2.157h1.6a3.056,3.056,0,0,1,3.209,2.876v15.1a3.056,3.056,0,0,1-3.209,2.876H4.209A3.056,3.056,0,0,1,1,20.135V5.034A3.056,3.056,0,0,1,4.209,2.157ZM15.407,7.7a.8.8,0,0,0-.8-.512.783.783,0,0,0-.752.569L12.1,15.087,10.6,10.578a.781.781,0,0,0-.65-.5.842.842,0,0,0-.786.313l-2.973,4H5.011a.723.723,0,1,0,0,1.438h1.6a.83.83,0,0,0,.667-.321l2.262-3.042,1.917,5.727a.8.8,0,0,0,.8.512.783.783,0,0,0,.752-.569L14.767,10.8l1.508,4.509a.8.8,0,0,0,.77.511h2.407a.723.723,0,1,0,0-1.438h-1.81Z" transform="translate(-1)"  fill-rule="evenodd"/>
+                    </svg> 
+                        <p class="footer--title">Dashboard</p>
+                   </a>
+                </li>
+                <li class="footer--item">
+                   <a href="#" class="d-flex flex-column gap-2 align-items-center">
+                    <svg id="Group_16" data-name="Group 16" xmlns="http://www.w3.org/2000/svg" width="19.063" height="21.581" viewBox="0 0 19.063 21.581">
+                        <path id="Path_2" data-name="Path 2" d="M113.947,264.529a4.925,4.925,0,1,1,4.925-4.925A4.931,4.931,0,0,1,113.947,264.529Zm0-8.225a3.3,3.3,0,1,0,3.3,3.3A3.3,3.3,0,0,0,113.947,256.3Z" transform="translate(-104.59 -254.678)"  />
+                        <path id="Path_3" data-name="Path 3" d="M119.094,285.61a.813.813,0,0,1-.813-.813,8.082,8.082,0,0,0-15.74-2.582,1.313,1.313,0,0,0,.183,1.2,1.353,1.353,0,0,0,1.11.571h11.255a.813.813,0,1,1,0,1.626H103.834a3,3,0,0,1-2.43-1.248,2.921,2.921,0,0,1-.4-2.666,9.708,9.708,0,0,1,18.906,3.1A.812.812,0,0,1,119.094,285.61Z" transform="translate(-100.843 -264.029)" />
+                    </svg> 
+                    <p class="footer--title">Profile</p>
+                   </a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+    <script src='{% static "js/bootstrap.min.js" %}'></script> 
+    <script src='{% static "js/custom.js" %}'></script>
+</body>
+</html>

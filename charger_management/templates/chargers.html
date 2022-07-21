@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chargers</title> 
+    <link rel="stylesheet" href='{% static "css/bootstrap.min.css" %}'> 
+    <link rel="stylesheet" href='{% static "css/style.css" %}'>
+</head>
+<body class="font-helvetica">
+    <header class="header">
+        <figure class="m-0 p-0 d-flex justify-content-center flex-shrink-0">
+            <img src='{% static "img/munich_airport_logo.png" %}' alt="">
+        </figure>
+        <div class="d-flex gap-2 align-items-center header--info-area">
+            <h2 class="header--info-charger">Chargers</h2>
+            <img src='{% static "img/charger-dark.svg" %}' alt="charger-dark.svg">
+        </div>
+         <div class="d-flex justify-content-end flex-shrink-0">
+            <ul class="list-unstyled d-flex gap-4 align-items-center pe-4">
+                <li>
+                    <a href="#" class="header--username font-product-sans">Sam Wilder</a>
+                </li>
+                <li>
+                   <a href="#" class="header--envelope">
+                        <img  src='{% static "img/envelope-fill.svg" %}' alt="envelope-fill.svg">
+                    </a>
+                </li>
+                <li>
+                    <button type="button" class="bg-transparant border-0">
+                        <img src='{% static "img/bell.svg" %}' alt="bell.svg">
+                    </button>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="rounded-circle" src='{% static "img/user.png" %}' alt="user.png">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main class="main--area-desktop">
+        <aside class="aside--left pb-4">
+            <div class="d-flex px-4 py-5 justify-content-center flex-column align-items-center">
+                <figure class="m-0 p-0 pb-3">
+                    <img src='{% static "img/car.svg" %}' alt="car.svg">
+                </figure>
+                <h1 class="font-arial text-center">MY FLEET </h1>
+            </div>
+            <div class="py-4 aside--menu">
+                <h2 class="font-arial text-center"><a href="/management/pools">POOLS</a></h2>
+                <ul class="aside--list pt-4 px-3 list-unstyled d-flex flex-column align-items-center gap-3">
+                    <li><a href="#">ADD POOL</a></li>
+                    <li><a href="#">REMOVE POOL</a></li>
+                    <li><a href="#">DASHBOARD</a></li>
+                    <li><a href="#">EXPORT DATA</a></li>
+                </ul>
+            </div>
+            <div class="py-4 aside--menu">
+                <h2 class="font-arial text-center"><a href="/management/chargers">CHARGERS</a></h2>
+                <ul class="aside--list pt-4 px-3 list-unstyled d-flex flex-column align-items-center gap-3">
+                    <li><a href="#">ADD CHARGER</a></li>
+                    <li><a href="#">REMOVE CHARGER</a></li>
+                    <li><a href="#">DASHBOARD</a></li>
+                    <li><a href="#">EXPORT DATA</a></li>
+                </ul>
+            </div>
+            <div class="py-4 aside--menu">
+                <h2 class="font-arial text-center"><a href="#">OPERATIONS</a></h2>
+                <ul class="aside--list pt-4 px-3 list-unstyled d-flex flex-column align-items-center gap-3">
+                    <li><a href="/management/fleet">OPERATE FLEET</a></li> 
+                    <li><a href="#">DASHBOARD</a></li>
+                    <li><a href="/management/transactions">TRANSACTIONS</a></li>
+                </ul>
+            </div>
+        </aside>
+        <section class="content--area">
+           <form action="/management/chargerAdded/" method="post">
+            {% csrf_token %}
+             <div class="row pb-2">
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label for="charger-name" class="form-label">Add Charger Name</label>
+                        {{ addChargerForm.name }}
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="form-group">
+                        <label for="pool" class="form-label">To Pool </label>
+                        {{ addChargerForm.pool }}
+                    </div>
+                </div>
+            </div>
+            <h3 class="enter-coordinate pb-2">Enter coordinates</h3>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label for="longitude" class="form-label">Longitude</label>
+                        {{ addChargerForm.longitude }}
+                    </div>
+                </div> 
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label for="latitude" class="form-label">Latitude</label>
+                        {{ addChargerForm.latitude }}
+                    </div>
+                </div> 
+                <div class="col-lg-4 col-xxl-3">
+                    <div class="form-group">
+                        <label for="type" class="form-label">Type of Charger</label>
+                        {{ addChargerForm.charger_type }}
+                    </div>
+                </div>
+                <div class="col-lg-2 col-xxl-1 d-flex align-items-end"> 
+                    <button type="submit" class="btn btn-brand">Submit</button>
+                </div> 
+            </div>
+            </form>
+            <form action="/management/removedCharger/" method="post">
+            {% csrf_token %}
+            <div class="row pb-2 pt-3">
+                <div class="col-lg-10 col-xxl-11 pe-xxl-0">
+                    <div class="form-group">
+                       <label for="remove" class="form-label">Remove Charger</label>
+                       {{ removeChargerForm.name }}
+                    </div>
+                </div>
+                <div class="col-lg-2 col-xxl-1 d-flex align-items-end"> 
+                    <button type="submit" class="btn btn-brand">Submit</button>
+                </div> 
+            </div>
+           </form>
+           <form action="/management/chargerTypeAdded/" method="post">
+            {% csrf_token %}
+               <div class="row">
+                   <div class="col-lg-7">
+                       <div class="form-group">
+                           <label for="name" class="form-label">Charger Type Name</label>
+                           {{ addChargerType.name }}
+                       </div>
+                   </div> 
+                   <div class="col-lg-4">
+                       <div class="form-group">
+                           <label for="kw" class="form-label">Charger Type Speed (KW)</label>
+                           {{ addChargerType.kw }}
+                       </div>
+                   </div>
+                   <div class="col-lg-2 col-xxl-1 d-flex align-items-end"> 
+                       <button type="submit" class="btn btn-brand">Submit</button>
+                   </div> 
+               </div>
+           </form>
+           <div class="pt-5">
+                <h2 class="current--chargers pb-5">Current Chargers</h2>
+
+                <table class="table-custom">
+                    <thead>
+                        <tr>
+                            <th>Charger Id</th>
+                            <th>Pool Id</th>
+                            <th>Charger Name</th>
+                            <th>Pool</th>
+                            <th>Type</th>
+                            <th>longitude</th>
+                            <th>latitude</th>
+                            <th>Available</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for charger in chargers %}
+                        <tr>
+                            <th>{{charger.id}}</th>
+                            <th>{{charger.pool.id}}</th>
+                            <th>{{charger.name}}</th>
+                            <th>{{charger.pool}}</th>
+                            <th>{{charger.charger_type}}</th>
+                            <td>{{charger.longitude}}</td>
+                            <td>{{charger.latitude}}</td>
+                            <td>{{charger.is_available}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+           </div>
+           <div class="pt-5">
+                <h2 class="current--chargers pb-5">Current Chargers Type</h2>
+
+                <table class="table-custom">
+                    <thead>
+                        <tr>
+                            <th>Charger Type Id</th>
+                            <th>Charger Type Name</th>
+                            <th>Charger Type KW</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for chargerType in chargerTypes %}
+                        <tr>
+                            <th>{{chargerType.id}}</th>
+                            <th>{{chargerType.name}}</th>
+                            <th>{{chargerType.kw}}</th>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+           </div>
+        </section>
+        <aside class="aside--right pe-4">
+           <div class="pb-4">
+                <!-- start coding for info box  one -->
+                <div class="info--box info--color font-arial  mb-3">
+                    <div class="d-flex justify-content-between align-items-center pb-2 gap-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src='{% static "img/info.svg" %}' alt="info.svg">
+                            <h2 class="info--box-title">INFO</h2>
+                        </div> 
+                    </div> 
+                    <p class="info--box-detail">Please make sure to maintain everything well!</p>  
+                </div>
+                <!-- start coding for info box  two -->
+                <div class="info--box   font-arial  mb-3">
+                    <div class="d-flex justify-content-between align-items-center pb-2 gap-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src='{% static "img/info.svg" %}' alt="info.svg">
+                            <h2 class="info--box-title">INFO</h2>
+                        </div> 
+                    </div> 
+                    <p class="info--box-detail">Please make sure to maintain everything well!</p>  
+                </div>
+                <!-- start coding for info box  three -->
+                <div class="info--box info--color font-arial  mb-3">
+                    <div class="d-flex justify-content-between align-items-center pb-2 gap-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src='{% static "img/info.svg" %}' alt="info.svg">
+                            <h2 class="info--box-title">INFO</h2>
+                        </div> 
+                    </div> 
+                    <p class="info--box-detail">Please make sure to maintain everything well!</p>  
+                </div>
+           </div>
+           <div class="">
+                <h2 class="aside--charger-display pb-3">Chargers Display</h2>
+                <div class="car--charger-box d-flex align-items-end">
+                   <div class="">
+                        <div class="pb-5 mb-2 d-flex gap-1 flex-wrap  ">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/hub.svg" %}' alt="hub.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                        </div> 
+                        <div class="d-flex car--charger-box-two  flex-wrap ">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                        </div> 
+                   </div>
+                </div>
+           </div>
+        </aside>
+    </main>
+    <script src='{% static "js/bootstrap.min.js" %}'></script> 
+    <script src='{% static "js/custom.js" %}' ></script>
+</body>
+</html>

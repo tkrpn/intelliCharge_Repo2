@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions</title> 
+    <link rel="stylesheet" href='{% static "css/bootstrap.min.css" %}'> 
+    <link rel="stylesheet" href='{% static "css/style.css" %}'>
+</head>
+<body class="font-helvetica">
+    <header class="header">
+        <figure class="m-0 p-0 d-flex justify-content-center flex-shrink-0">
+            <img src='{% static "img/munich_airport_logo.png" %}' alt="">
+        </figure>
+        <div class="d-flex gap-2 align-items-center header--info-area">
+            <h2 class="header--info-charger">Transactions</h2>
+        </div>
+         <div class="d-flex justify-content-end flex-shrink-0">
+            <ul class="list-unstyled d-flex gap-4 align-items-center pe-4">
+                <li>
+                    <a href="#" class="header--username font-product-sans">Sam Wilder</a>
+                </li>
+                <li>
+                   <a href="#" class="header--envelope">
+                        <img  src='{% static "img/envelope-fill.svg" %}' alt="envelope-fill.svg">
+                    </a>
+                </li>
+                <li>
+                    <button type="button" class="bg-transparant border-0">
+                        <img src='{% static "img/bell.svg" %}' alt="bell.svg">
+                    </button>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="rounded-circle" src='{% static "img/user.png" %}' alt="user.png">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main class="main--area-desktop">
+        <aside class="aside--left pb-4">
+            <div class="d-flex px-4 py-5 justify-content-center flex-column align-items-center">
+                <figure class="m-0 p-0 pb-3">
+                    <img src='{% static "img/car.svg" %}' alt="car.svg">
+                </figure>
+                <h1 class="font-arial text-center">MY FLEET </h1>
+            </div>
+            <div class="py-4 aside--menu">
+                <h2 class="font-arial text-center"><a href="/management/pools">POOLS</a></h2>
+                <ul class="aside--list pt-4 px-3 list-unstyled d-flex flex-column align-items-center gap-3">
+                    <li><a href="#">ADD POOL</a></li>
+                    <li><a href="#">REMOVE POOL</a></li>
+                    <li><a href="#">DASHBOARD</a></li>
+                    <li><a href="#">EXPORT DATA</a></li>
+                </ul>
+            </div>
+            <div class="py-4 aside--menu">
+                <h2 class="font-arial text-center"><a href="/management/chargers">CHARGERS</a></h2>
+                <ul class="aside--list pt-4 px-3 list-unstyled d-flex flex-column align-items-center gap-3">
+                    <li><a href="#">ADD CHARGER</a></li>
+                    <li><a href="#">REMOVE CHARGER</a></li>
+                    <li><a href="#">DASHBOARD</a></li>
+                    <li><a href="#">EXPORT DATA</a></li>
+                </ul>
+            </div>
+            <div class="py-4 aside--menu">
+                <h2 class="font-arial text-center"><a href="#">OPERATIONS</a></h2>
+                <ul class="aside--list pt-4 px-3 list-unstyled d-flex flex-column align-items-center gap-3">
+                    <li><a href="/management/fleet">OPERATE FLEET</a></li> 
+                    <li><a href="#">DASHBOARD</a></li>
+                    <li><a href="/management/transactions">TRANSACTIONS</a></li>
+                </ul>
+            </div>
+        </aside>
+        <section class="content--area">
+           <form action="/management/manipulateTransaction/" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="longitude" class="form-label">Transaction</label>
+                        {{ form.car }}
+                    </div>
+                </div> 
+                <div class="col-lg-5">
+                    <div class="form-group">
+                        <label for="latitude" class="form-label">Parked from</label>
+                        {{ form.parked_from }}
+                    </div>
+                </div> 
+                <div class="col-lg-2 col-xxl-1 d-flex align-items-end"> 
+                    <button type="submit" class="btn btn-brand">Submit</button>
+                </div> 
+            </div>
+            </form>
+           <div class="pt-5" style="overflow-y:scroll;max-width: 50vw;">
+                <h2 class="current--chargers pb-5">Current Chargers</h2>
+
+                <table class="table-custom">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Pool</th>
+                            <th>Charger</th>
+                            <th>Licence Plate</th>
+                            <th>Parked From</th>
+                            <th>Parked Until</th>
+                            <th>Charging duration</th>
+                            <th>Charging State</th>
+                            <th>Current Charging State</th>
+                            <th>Needs Relocation</th>
+                            <th>Is Pickedup</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for transaction in transactions %}
+                    <tr>
+                        <th>{{transaction.id}}</th>
+                        <th>{{transaction.pool}}</th>
+                        <th>{{transaction.charger}}</th>
+                        <td>{{transaction.car}}</td>
+                        <td>{{transaction.parked_from}}</td>
+                        <td>{{transaction.parked_until}}</td>
+                        <td>{{transaction.duration}}</td>
+                        <td>{{transaction.charging_state}}</td>
+                        <td>{{transaction.current_charging_state}}</td>
+                        <td>{{transaction.needs_relocation}}</td>
+                        <td>{{transaction.is_pickedup}}</td>
+                    </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+           </div>
+        {% if graph %}
+        <div style="width:600;height:500">
+        {{ graph|safe }}
+        </div>
+        {% endif %}
+        <form action="/management/removeTransactions/">
+            <button type="submit" class="btn btn-brand">REMOVE TRANSACTIONS</button>
+        </form>
+        </section>
+        <aside class="aside--right pe-4">
+           <div class="pb-4">
+                <!-- start coding for info box  one -->
+                <div class="info--box info--color font-arial  mb-3">
+                    <div class="d-flex justify-content-between align-items-center pb-2 gap-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src='{% static "img/info.svg" %}' alt="info.svg">
+                            <h2 class="info--box-title">INFO</h2>
+                        </div> 
+                    </div> 
+                    <p class="info--box-detail">Please make sure to maintain everything well!</p>  
+                </div>
+                <!-- start coding for info box  two -->
+                <div class="info--box   font-arial  mb-3">
+                    <div class="d-flex justify-content-between align-items-center pb-2 gap-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src='{% static "img/info.svg" %}' alt="info.svg">
+                            <h2 class="info--box-title">INFO</h2>
+                        </div> 
+                    </div> 
+                    <p class="info--box-detail">Please make sure to maintain everything well!</p>  
+                </div>
+                <!-- start coding for info box  three -->
+                <div class="info--box info--color font-arial  mb-3">
+                    <div class="d-flex justify-content-between align-items-center pb-2 gap-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src='{% static "img/info.svg" %}' alt="info.svg">
+                            <h2 class="info--box-title">INFO</h2>
+                        </div> 
+                    </div> 
+                    <p class="info--box-detail">Please make sure to maintain everything well!</p>  
+                </div>
+           </div>
+           <div class="">
+                <h2 class="aside--charger-display pb-3">Chargers Display</h2>
+                <div class="car--charger-box d-flex align-items-end">
+                    <div class="">
+                        <div class="pb-5 mb-2 d-flex gap-1 flex-wrap  ">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/hub.svg" %}' alt="hub.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                        </div> 
+                        <div class="d-flex car--charger-box-two  flex-wrap ">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                            <img src='{% static "img/car-aside.svg" %}' alt="car-aside.svg">
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+    <script src='{% static "js/bootstrap.min.js" %}'></script> 
+    <script src='{% static "js/custom.js" %}'></script>
+</body>
+</html>

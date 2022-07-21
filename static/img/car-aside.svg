@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="41.998" height="67.419" viewBox="0 0 41.998 67.419">
+  <defs>
+    <filter id="Fill_1" x="0" y="0" width="41.998" height="67.419" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feFlood flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Car" transform="translate(6 59.419) rotate(-90)">
+    <g transform="matrix(0, 1, -1, 0, 59.42, -6)" filter="url(#Fill_1)">
+      <path id="Fill_1-2" data-name="Fill 1" d="M54.257,16.682l.173-3.309h-.008l.015-.289a37.067,37.067,0,0,0-.6-6.527c-.622-1.88-2.932-2.843-4.853-3.325A2.816,2.816,0,0,0,46.908,2.2l-5.2-.286a2.9,2.9,0,0,0-1.834.5l-.761-.042L36.8,2.251,36.043.044,35.255,0l.2,2.177L21.636,1.416a2.919,2.919,0,0,0-1.771-.7L7.155.015a2.867,2.867,0,0,0-2,.625C3.608.783,1.223,1.254.985,2.808L.492,12.248,0,21.686c.075,1.571,2.4,2.3,3.924,2.614a2.881,2.881,0,0,0,1.92.841l12.71.7a2.9,2.9,0,0,0,1.834-.5l13.91.766-.389,1.965.788.044.9-1.937,2.268.125.773.056a2.928,2.928,0,0,0,1.759.687l5.2.286a2.906,2.906,0,0,0,1.854-.514c2.008-.237,4.624-.914,5.479-2.812A36.98,36.98,0,0,0,54.2,17.582l.047-.9Z" transform="translate(7.9 59.42) rotate(-92)" fill="#fff"/>
+    </g>
+    <rect id="Rectangle" width="3.514" height="8.786" rx="1" transform="matrix(1, 0.017, -0.017, 1, 2.308, 9.698)" fill="#242e42"/>
+    <rect id="Rectangle-2" data-name="Rectangle" width="3.514" height="7.029" rx="1" transform="matrix(1, 0.017, -0.017, 1, 2.4, 4.427)" fill="#f52d56"/>
+    <rect id="Rectangle-3" data-name="Rectangle" width="1.757" height="8.786" rx="0.879" transform="translate(53.188 10.638)" fill="#242e42"/>
+    <rect id="Rectangle-4" data-name="Rectangle" width="3.514" height="7.029" rx="1" transform="matrix(1, 0.017, -0.017, 1, 2.185, 16.725)" fill="#f52d56"/>
+    <path id="Path" d="M12.85,11.519h-.014A20.767,20.767,0,0,1,11.3,18.654a4.063,4.063,0,0,1-2.288,2.4l-.029.008a2.1,2.1,0,0,1-.361.076,1.763,1.763,0,0,1-.776-.058L0,17.758c1.127-.716,1.728-5.685,1.918-7.563C1.925,8.306,1.843,3.3.8,2.467L8.944.03a1.749,1.749,0,0,1,.777.028,2.2,2.2,0,0,1,.344.112L10.1.183a4.11,4.11,0,0,1,2.027,2.635,20.863,20.863,0,0,1,.784,7.263h.014c-.012.245-.025.484-.038.719s-.023.474-.036.719Z" transform="translate(28.588 4.456)" fill="#242e42"/>
+    <path id="Path-2" data-name="Path" d="M8.55,2.487l-.515,9.866-.311,5.965-.019.374C6.083,20.627,2.418,20.525,0,20.2L1.054.006c2.437-.054,6.093.247,7.5,2.348Z" transform="matrix(0.999, -0.035, 0.035, 0.999, 8.609, 4.5)" fill="#242e42"/>
+    <path id="Path_5" data-name="Path 5" d="M.333,0H17.571S10.137,3.514,8.12,3.514-1.693,0,.333,0Z" transform="matrix(0.999, 0.052, -0.052, 0.999, 16.819, 1.987)" fill="#242e42"/>
+    <path id="Path_5-2" data-name="Path 5" d="M.342,3.514H17.58S9.893,0,7.876,0-1.684,3.514.342,3.514Z" transform="matrix(1, -0.017, 0.017, 1, 15.832, 23.512)" fill="#242e42"/>
+  </g>
+</svg>

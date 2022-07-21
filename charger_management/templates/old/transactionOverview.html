@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css"> 
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('.datepicker').datepicker();
+    });
+    </script>
+
+    <body>
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <h1>Parking & Charging Overview</h1>
+                <p>Manipulate Transaction</p>
+                <form action="/management/manipulateTransaction/" method="post">
+                    {% csrf_token %}
+                    {{ form }}
+                    <input type="submit" value="Submit" />
+                </form>
+                <table class="table is-fullwidth is-hoverable" border="1">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Pool</th>
+                        <th>Charger</th>
+                        <th>Licence Plate</th>
+                        <th>Parked From</th>
+                        <th>Parked Until</th>
+                        <th>Charging duration</th>
+                        <th>Charging State</th>
+                        <th>Current Charging State</th>
+                        <th>Needs Relocation</th>
+                        <th>Is Pickedup</th>
+                    </tr>
+                </thead>
+                {% for transaction in transactions %}
+                <tbody>
+                <tr>
+                    <th>{{transaction.id}}</th>
+                    <th>{{transaction.pool}}</th>
+                    <th>{{transaction.charger}}</th>
+                    <td>{{transaction.license_plate}}</td>
+                    <td>{{transaction.parked_from}}</td>
+                    <td>{{transaction.parked_until}}</td>
+                    <td>{{transaction.duration}}</td>
+                    <td>{{transaction.charging_state}}</td>
+                    <td>{{transaction.current_charging_state}}</td>
+                    <td>{{transaction.needs_relocation}}</td>
+                    <td>{{transaction.is_pickedup}}</td>
+                </tr>
+                </tbody>
+                {% endfor %}
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
